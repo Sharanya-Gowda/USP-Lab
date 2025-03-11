@@ -30,3 +30,25 @@ void main(){
 
 }
 
+
+********3************
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<fcntl.h>
+int main(){
+        char buffer[100];
+        int bytesRead;
+        printf("Enter some text: ");
+        fflush(stdout);
+        bytesRead = read(STDIN_FILENO, buffer, sizeof(buffer));
+        if (bytesRead == -1) {
+                printf("Error reading input");
+                return 1;
+        }
+        write(STDOUT_FILENO, "You entered: ", 13);
+        write(STDOUT_FILENO, buffer, bytesRead);
+        return 0;
+}
+
+
