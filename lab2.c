@@ -1,3 +1,4 @@
+*******1********
 #include<stdio.h>
 #include<fcntl.h>
 #include<unistd.h>
@@ -12,3 +13,20 @@ void main(){
         close(fd);
 
 }
+
+*********2***********
+#include<stdio.h>
+#include<fcntl.h>
+#include<unistd.h>
+#include<stdlib.h>
+void main(){
+        int fd;
+        if((fd=creat("text2.txt",777))<0){
+                printf("error");
+                exit(1);
+        }
+        printf("File created successfully %d",fd);
+        close(fd);
+
+}
+
